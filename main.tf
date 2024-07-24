@@ -21,3 +21,7 @@ provider "routeros" {
   password = var.mikrotik_password
   insecure = true
 }
+
+provider "vault" {
+  address = var.vault_address
+}

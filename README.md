@@ -1,4 +1,4 @@
-# grs-proxmox-auth
+# ros-auth
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

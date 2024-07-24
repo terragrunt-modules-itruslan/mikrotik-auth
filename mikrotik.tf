@@ -20,8 +20,6 @@ resource "routeros_system_user" "tf_user" {
 resource "vault_kv_secret_v2" "mikrotik" {
   count = var.vault_enabled ? 1 : 0
 
-  depends_on = [routeros_system_user.tf_user]
-
   mount               = var.vault_mount_path
   name                = var.vault_secret_name
   delete_all_versions = true

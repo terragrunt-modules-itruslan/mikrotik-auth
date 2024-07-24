@@ -1,7 +1,6 @@
-
 output "vault_secret" {
   description = "Mikrotik secret in Vault"
-  value       = "${var.vault_address}ui/vault/secrets/${var.vault_mount_path}/show/${var.vault_secret_name}"
+  value       = var.vault_enabled ? "${var.vault_address}ui/vault/secrets/${var.vault_mount_path}/show/${var.vault_secret_name}" : null
 }
 
 output "mikrotik_url" {
