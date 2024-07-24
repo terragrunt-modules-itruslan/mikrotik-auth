@@ -4,5 +4,9 @@ include "root" {
 }
 
 terraform {
-  source = "git::ssh://git@gitlab.com/group-itruslan/terraform/terragrunt/modules/grs-mikrotik-auth.git//?ref=X.Y.Z"
+  source = "git::ssh://git@gitlab.com/group-itruslan/terraform/terragrunt/modules/ros-auth.git//?ref=X.Y.Z"
+}
+
+inputs = {
+  vault_enabled = false
 }

@@ -14,8 +14,8 @@
 | Name | Version |
 |------|---------|
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.2 |
-| <a name="provider_routeros"></a> [routeros](#provider\_routeros) | 1.54.2 |
-| <a name="provider_vault"></a> [vault](#provider\_vault) | 4.2.0 |
+| <a name="provider_routeros"></a> [routeros](#provider\_routeros) | 1.57.0 |
+| <a name="provider_vault"></a> [vault](#provider\_vault) | 4.3.0 |
 
 ## Modules
 
