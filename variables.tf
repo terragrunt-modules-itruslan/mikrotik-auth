@@ -1,6 +1,5 @@
 variable "vault_address" {
   description = "Vault address"
-  default     = "https://vault.itruslan.ru/"
   type        = string
 }
 variable "vault_enabled" {
@@ -17,35 +16,35 @@ variable "vault_mount_path" {
 
 variable "vault_secret_name" {
   description = "Full name of the secret"
-  default     = "homelab/mikrotik/auth"
+  default     = "homelab/ros/auth"
   type        = string
 }
 
-variable "mikrotik_host" {
-  description = "Mikrotik host for provider"
-  default     = "gw.itruslan.ru:8728"
+variable "ros_host" {
+  description = "RouterOS host for provider"
+  default     = "192.168.99.1:8728"
   type        = string
 }
 
-variable "mikrotik_username" {
-  description = "Mikrotik username for provider"
+variable "ros_username" {
+  description = "RouterOS username for provider"
   default     = "admin"
   type        = string
 }
 
-variable "mikrotik_password" {
-  description = "Mikrotik password for provider"
+variable "ros_password" {
+  description = "RouterOS password for provider"
   type        = string
   sensitive   = true
 }
 
-variable "mikrotik_tf_username" {
-  description = "Mikrotik username created for terraform use"
+variable "ros_tf_username" {
+  description = "RouterOS username created for terraform use"
   default     = "terraform"
   type        = string
 }
 
-variable "mikrotik_allow_subnet" {
+variable "ros_allow_subnet" {
   description = "Allow user from subnet"
   default     = "192.168.99.0/24"
   type        = string

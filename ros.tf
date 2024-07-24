@@ -1,5 +1,5 @@
 locals {
-  mikrotik_host_api = "api://${var.mikrotik_host}"
+  ros_host_api = "api://${var.ros_host}"
 }
 resource "random_password" "password" {
   length           = 16
@@ -10,14 +10,14 @@ resource "random_password" "password" {
 resource "routeros_system_user" "tf_user" {
   depends_on = [random_password.password]
 
-  name     = var.mikrotik_tf_username
-  address  = var.mikrotik_allow_subnet
+  name     = var.ros_tf_username
+  address  = var.ros_allow_subnet
   group    = "api"
   password = random_password.password.result
   comment  = "Managed by Terraform"
 }
 
-resource "vault_kv_secret_v2" "mikrotik" {
+resource "vault_kv_secret_v2" "ros" {
   count = var.vault_enabled ? 1 : 0
 
   mount               = var.vault_mount_path
@@ -25,10 +25,10 @@ resource "vault_kv_secret_v2" "mikrotik" {
   delete_all_versions = true
   data_json = jsonencode(
     {
-      mikrotik_host     = var.mikrotik_host
-      mikrotik_host_api = local.mikrotik_host_api
-      mikrotik_username = routeros_system_user.tf_user.name
-      mikrotik_password = routeros_system_user.tf_user.password
+      ros_host     = var.ros_host
+      ros_host_api = local.ros_host_api
+      ros_username = routeros_system_user.tf_user.name
+      ros_password = routeros_system_user.tf_user.password
     }
   )
 }

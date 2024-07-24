@@ -16,9 +16,9 @@ terraform {
 }
 
 provider "routeros" {
-  hosturl  = local.mikrotik_host_api
-  username = var.mikrotik_username
-  password = var.mikrotik_password
+  hosturl  = local.ros_host_api
+  username = var.ros_username
+  password = var.ros_password
   insecure = true
 }
 
