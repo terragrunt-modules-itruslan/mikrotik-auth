@@ -4,7 +4,7 @@ include "root" {
 }
 
 terraform {
-  source = "git::ssh://git@gitlab.com/group-itruslan/terraform/terragrunt/modules/ros-auth.git//?ref=X.Y.Z"
+  source = "git::ssh://git@gitlab.com/group-itruslan/iac/terragrunt/modules/ros-auth.git//?ref=X.Y.Z"
 }
 
 inputs = {
