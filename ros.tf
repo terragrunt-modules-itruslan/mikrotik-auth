@@ -7,12 +7,18 @@ resource "random_password" "password" {
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
+resource "routeros_system_user_group" "tf_group" {
+  name    = var.ros_tf_group
+  policy  = var.ros_tf_group_policy
+  comment = "Managed by Terraform"
+}
+
 resource "routeros_system_user" "tf_user" {
   depends_on = [random_password.password]
 
   name     = var.ros_tf_username
   address  = var.ros_allow_subnet
-  group    = "api"
+  group    = routeros_system_user_group.tf_group.name
   password = random_password.password.result
   comment  = "Managed by Terraform"
 }
