@@ -16,12 +16,9 @@ terraform {
 }
 
 provider "routeros" {
-  hosturl  = local.ros_host_api
-  username = var.ros_username
-  password = var.ros_password
-  insecure = true
+  hosturl = length(var.mikrotik_hosturl) > 0 ? var.mikrotik_hosturl : null
 }
 
 provider "vault" {
-  address = var.vault_address
+  address = length(var.vault_address) > 0 ? var.vault_address : null
 }

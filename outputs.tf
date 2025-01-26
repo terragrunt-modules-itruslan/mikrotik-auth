@@ -1,25 +1,22 @@
-output "vault_secret" {
-  description = "Mikrotik secret in Vault"
-  value       = var.vault_enabled ? "${var.vault_address}ui/vault/secrets/${var.vault_mount_path}/show/${var.vault_secret_name}" : null
+output "mikrotik_hosturl" {
+  description = "The Proxmox VE endpoint URL"
+  value       = length(var.mikrotik_hosturl) > 0 ? var.mikrotik_hosturl : null
 }
 
-output "ros_url" {
-  description = "Mikrotik url"
-  value       = var.ros_host
+output "mikrotik_users" {
+  description = "Credentials for Mikrotik users"
+  value = { for user, resource in routeros_system_user.user :
+    user => {
+      user     = resource.name
+      password = resource.password
+    }
+  }
+  sensitive = true
 }
 
-output "ros_url_api" {
-  description = "Mikrotik url api"
-  value       = local.ros_host_api
-}
-
-output "ros_tf_username" {
-  description = "Terraform user name"
-  value       = routeros_system_user.tf_user.name
-}
-
-output "ros_tf_password" {
-  description = "Terraform user password"
-  sensitive   = true
-  value       = routeros_system_user.tf_user.password
+output "vault_secrets" {
+  description = "Full URLs to user secrets in Vault"
+  value = var.vault_enabled ? {
+    for user, secret in vault_kv_secret_v2.secret : user => "${var.vault_address}/ui/vault/secrets/${var.vault_mount_path}/show/${secret.name}"
+  } : null
 }

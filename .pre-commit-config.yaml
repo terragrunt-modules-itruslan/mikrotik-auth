@@ -1,6 +1,7 @@
+---
 repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.96.3
+    rev: v1.97.0
     hooks:
       - id: terraform_fmt
       - id: terraform_validate
@@ -13,6 +14,7 @@ repos:
         args:
           - '--args=--skip-check CKV_SECRET_6'
       - id: terraform_trivy
+      - id: terrascan
       - id: terraform_tflint
         args:
           - '--args=--only=terraform_deprecated_interpolation'
@@ -44,3 +46,8 @@ repos:
       - id: check-yaml
         args: [--unsafe]
         exclude: templates
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        args: [--strict]
