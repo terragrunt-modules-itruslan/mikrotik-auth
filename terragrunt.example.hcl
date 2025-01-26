@@ -4,9 +4,27 @@ include "root" {
 }
 
 terraform {
-  source = "git::ssh://git@gitlab.com/group-itruslan/iac/terragrunt/modules/ros-auth.git//?ref=X.Y.Z"
+  source = "git::ssh://git@gitlab.com/group-itruslan/homelab/terraform/modules/mikrotik-auth.git//?ref=x.x.x"
 }
 
 inputs = {
-  vault_enabled = false
+  vault_enabled    = true
+  vault_address    = "https://vault.example.local"
+  mikrotik_hosturl = "api://192.168.88.1"
+  groups = [
+    {
+      name = "api-users"
+      policy = ["api"]
+    },
+  ]
+  users = [
+    {
+      name  = "terraform"
+      group = "write"
+    },
+    {
+      name = "api-user"
+      group = "api-users"
+    },
+  ]
 }
