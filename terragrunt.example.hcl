@@ -4,7 +4,7 @@ include "root" {
 }
 
 terraform {
-  source = "git::ssh://git@gitlab.com/group-itruslan/homelab/terraform/modules/mikrotik-auth.git//?ref=x.x.x"
+  source = "git::ssh://git@gitlab.com/group-itruslan/homelab/terragrunt/modules/mikrotik-auth.git//?ref=x.x.x"
 }
 
 inputs = {
