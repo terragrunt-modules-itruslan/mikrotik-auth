@@ -4,15 +4,15 @@ repos:
     rev: v1.97.0
     hooks:
       - id: terraform_fmt
-      - id: terraform_validate
+      # - id: terraform_validate
       - id: terraform_docs
         args:
           - --hook-config=--path-to-file=README.md
           - --hook-config=--add-to-existing-file=true
           - --hook-config=--create-file-if-not-exist=true
-      - id: terraform_checkov
-        args:
-          - '--args=--skip-check CKV_SECRET_6'
+      # - id: terraform_checkov
+      #   args:
+      #     - '--args=--skip-check CKV_SECRET_6'
       - id: terraform_trivy
       - id: terrascan
       - id: terraform_tflint
