@@ -10,7 +10,7 @@ terraform {
     }
     vault = {
       source  = "vault"
-      version = "~> 4.2"
+      version = "~> 5.0"
     }
   }
 }
