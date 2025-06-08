@@ -4,7 +4,7 @@ include "root" {
 }
 
 terraform {
-  source = "git::ssh://git@gitlab.com/group-itruslan/homelab/terragrunt/modules/mikrotik-auth.git//?ref=x.x.x"
+  source = "git::ssh://git@github.com/terragrunt-modules-itruslan/mikrotik-auth.git/?ref=x.y.z"
 }
 
 inputs = {
@@ -23,7 +23,11 @@ inputs = {
       group = "write"
     },
     {
-      name = "api-user"
+      name = "api-user1"
+      group = "api-users"
+    },
+    {
+      name = "api-user2"
       group = "api-users"
     },
   ]

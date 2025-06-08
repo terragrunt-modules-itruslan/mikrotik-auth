@@ -2,11 +2,11 @@ terraform {
   required_providers {
     routeros = {
       source  = "terraform-routeros/routeros"
-      version = "~> 1.54"
+      version = "~> 1.85"
     }
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.6"
+      version = "~> 3.7"
     }
     vault = {
       source  = "vault"
@@ -16,7 +16,8 @@ terraform {
 }
 
 provider "routeros" {
-  hosturl = length(var.mikrotik_hosturl) > 0 ? var.mikrotik_hosturl : null
+  hosturl  = length(var.mikrotik_hosturl) > 0 ? var.mikrotik_hosturl : null
+  username = length(var.mikrotik_username) > 0 ? var.mikrotik_username : null
 }
 
 provider "vault" {

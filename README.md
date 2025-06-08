@@ -19,17 +19,17 @@ export VAULT_TOKEN="YOUR_TOKEN"
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.6 |
-| <a name="requirement_routeros"></a> [routeros](#requirement\_routeros) | ~> 1.54 |
-| <a name="requirement_vault"></a> [vault](#requirement\_vault) | ~> 4.2 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.7 |
+| <a name="requirement_routeros"></a> [routeros](#requirement\_routeros) | ~> 1.85 |
+| <a name="requirement_vault"></a> [vault](#requirement\_vault) | ~> 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
-| <a name="provider_routeros"></a> [routeros](#provider\_routeros) | 1.75.0 |
-| <a name="provider_vault"></a> [vault](#provider\_vault) | 4.6.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.7.2 |
+| <a name="provider_routeros"></a> [routeros](#provider\_routeros) | 1.85.1 |
+| <a name="provider_vault"></a> [vault](#provider\_vault) | 5.0.0 |
 
 ## Modules
 
@@ -50,6 +50,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_groups"></a> [groups](#input\_groups) | List of groups with privileges. Built-in groups are not allowed. | <pre>list(object({<br>    name   = string<br>    policy = list(string)<br>  }))</pre> | `[]` | no |
 | <a name="input_mikrotik_hosturl"></a> [mikrotik\_hosturl](#input\_mikrotik\_hosturl) | Mikrotik endpoint | `string` | `""` | no |
+| <a name="input_mikrotik_username"></a> [mikrotik\_username](#input\_mikrotik\_username) | Mikrotik username | `string` | `""` | no |
 | <a name="input_users"></a> [users](#input\_users) | List of users with group | <pre>list(object({<br>    name  = string<br>    group = string<br>  }))</pre> | n/a | yes |
 | <a name="input_vault_address"></a> [vault\_address](#input\_vault\_address) | Vault address | `string` | `""` | no |
 | <a name="input_vault_enabled"></a> [vault\_enabled](#input\_vault\_enabled) | Save secret to vault | `bool` | `false` | no |

@@ -3,6 +3,11 @@ variable "mikrotik_hosturl" {
   default     = ""
   type        = string
 }
+variable "mikrotik_username" {
+  description = "Mikrotik username"
+  default     = ""
+  type        = string
+}
 
 variable "vault_address" {
   description = "Vault address"
