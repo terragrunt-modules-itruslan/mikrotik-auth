@@ -8,8 +8,9 @@ To run the module, you need to set the environment variables:
 
 ```bash
 export MIKROTIK_HOST="api://192.168.88.1" # or specify the `mikrotik_hosturl` inputs variable
-export MIKROTIK_USER="admin"
+export MIKROTIK_USER="admin" # or specify the `mikrotik_username` inputs variable
 export MIKROTIK_PASSWORD="YOUR_PASSWORD"
+# Optional. When turning on the Vault with `vault_enabled = true`
 export VAULT_ADDR="https://vault.example.local" # or specify the `vault_address` inputs variable
 export VAULT_TOKEN="YOUR_TOKEN"
 ```
